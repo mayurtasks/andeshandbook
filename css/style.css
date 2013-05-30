@@ -1,0 +1,190 @@
+/* Ande's Handbook */
+
+/* Loading Fonts */
+@font-face {
+    font-family: 'MyriadProRegular';
+    src: url('../fonts/myriadpro-regular.eot');
+    src: url('../fonts/myriadpro-regular.eot') format('embedded-opentype'),
+         url('../fonts/myriadpro-regular.woff') format('woff'),
+         url('../fonts/myriadpro-regular.ttf') format('truetype'),
+         url('../fonts/myriadpro-regular.svg#MyriadProRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'MyriadProCondensed';
+    src: url('../fonts/myriadpro-cond.eot');
+    src: url('../fonts/myriadpro-cond.eot') format('embedded-opentype'),
+         url('../fonts/myriadpro-cond.woff') format('woff'),
+         url('../fonts/myriadpro-cond.ttf') format('truetype'),
+         url('../fonts/myriadpro-cond.svg#MyriadProCondensed') format('svg');
+}
+
+/* Generics */
+body {
+	font-family: 'MyriadProRegular';
+}
+a {text-decoration:none;}
+
+/* Grids */
+.wrapper {width:960px; margin:0 auto;}
+.content {background-color:#f1f1f1; overflow:auto;}
+.one-fifth, .four-fifth {float:left; margin:5px;}
+.one-fifth {width:182px;}
+.four-fifth {width:758px;}
+
+/* Header */
+.header {background-color:#011f5b; height:110px; border-bottom:5px #026688 solid;}
+#logo {padding:20px;}
+#languages {float:right; margin-right:10px;}
+#languages li {display:inline-block; margin:10px 5px 0 0;}
+
+/* Typography */
+h4.dark {background-color:#747474; padding:5px; color:#FFF;}
+h4.light {background-color:#cbcbcb; padding:5px; color:#747474;}
+
+/* Navigation */
+#navigation ul {display: none;}
+#navigation li:hover > ul {display: block;}
+#navigation {
+	width:100%;
+	background-color:#484848; 
+	list-style: none;
+	position: relative;
+	display: inline-table;
+}
+#navigation li.login {float:right;}
+#navigation li.login a:after {content:" \25BC";}
+#navigation li {float: left;}
+#navigation li:hover {/*List Hover Effect*/}
+#navigation li:hover a {color: #CCC;}
+#navigation li a {
+	display: block; 
+	padding: 15px 10px 15px 30px;
+	font-weight: bold;
+	color: #FFF; 
+	text-decoration: none;
+	text-align:left;
+}
+#navigation ul { 
+	padding: 0;
+	position: absolute; 
+}
+#navigation ul li {
+	background: #cbcbcb;
+	float: none; 
+	border-top: 1px solid #b5b5b5;
+	position: relative;
+}
+#navigation ul li a {
+	font-size: 18px;
+	padding: 10px;
+	color: #454545 !important;
+	font-weight:normal;
+}	
+#navigation ul li a:hover {color: #999 !important;}
+
+/* Footer */
+.footer {font-family: 'MyriadProCondensed'; background-color:#011f5b; border-top:5px #026688 solid; padding:20px 0 5px 0; overflow:auto;}
+.footcols {width:140px; min-height:120px; margin:0 10px; float:left;}
+.footcols a {color:#FFF; font-size:17px;}
+.footcols a:hover {text-decoration:underline;}
+.footcols p {line-height:20px;}
+.foot-heading {color:#d4d4d4; text-transform:uppercase; font-size:19px; line-height:30px;}
+.social img {margin:5px 5px 0 0;}
+.foot-border {background:url(../images/foot-seperator.gif) repeat-y right;}
+.findus img {margin-bottom:5px;}
+
+/* Home Page */
+.main-frame {height:335px; background:url(../images/home-slide.jpg) no-repeat;}
+.home-search {
+	background-color: rgba(98, 98, 98, 0.8); 
+	width:400px; 
+	padding:20px 0 20px 20px; 
+	float:right; 
+	margin-top:120px; 
+	border:4px #026688 solid; 
+	border-right:none;
+	border-radius:15px 0 0 15px;
+}
+.home-search span {font-family: 'MyriadProCondensed'; text-transform:uppercase; color:#FFF; display:block; font-size:24px; font-weight:bold;}
+.home-search #search {
+	width:190px;
+	padding:6px 35px 6px 4px;
+	background:#e3e3e3 url(../images/search-icon.png) no-repeat center right;
+	border:2px #7a7a7a solid;
+}
+.home-search label {color:#FFF; display:block; padding:2px 20px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:bold; font-size:13px;}
+
+/* Ratings */
+.rating {
+    float:right;
+}
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+	width:16px;
+	padding:0 2px;
+	font-size:18px;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    color:#ddd;
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+.etabs { margin: 0; padding: 0; }
+.tab { display: inline-block; zoom:1; *display:inline; background: #cbcbcb; border: solid 1px #999; border-bottom: none;}
+.tab a { line-height: 2em; display: block; padding: 0 16px; outline: none; color:#747474; }
+.tab a:hover { }
+.tab.active { background: #fff; padding-top:2px; position: relative; top: 1px; border-color: #666; color:#484848; }
+.tab a.active { }
+.tab-container .panel-container { background: #fff; border: solid #666 1px; padding:1px 5px; }
+
+.rankings li {border-top:1px #939393 dotted; padding:5px 0; color:#01678f; font-family: 'MyriadProCondensed';}
+
+#ultimate-articles li {padding:10px 5px; background-color:#FFF;}
+#ultimate-articles li + li {border-top:1px #949494 dotted;}
+#ultimate-articles li h5 {color:#00658e; font-weight:bold; line-height:20px;}
+#ultimate-articles li p {color:#aaaaaa; font-size:14px;}
+
+
+
+
+
+
+
+
